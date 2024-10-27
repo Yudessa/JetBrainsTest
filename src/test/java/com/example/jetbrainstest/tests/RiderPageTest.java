@@ -28,7 +28,8 @@ public class RiderPageTest extends BaseTest {
     public void secondDownloadButtonIsClickable() {
         rp.downloadSecondButtonClick();
         String currentUrl = getDriver().getCurrentUrl();
-        Assertions.assertEquals("https://www.jetbrains.com/rider/download/#section=windows", currentUrl, "После клика на Download открывает не ту страницу");
+        Assertions.assertEquals("https://www.jetbrains.com/rider/download/#section=windows", currentUrl,
+                "После клика на Download открывает не ту страницу");
     }
 
     @Test
@@ -36,7 +37,8 @@ public class RiderPageTest extends BaseTest {
     public void dockerButtonIsClickable() {
         rp.dockerButtonClick();
         String currentUrl = getDriver().getCurrentUrl();
-        Assertions.assertEquals("https://www.jetbrains.com/guide/dotnet/tutorials/docker-dotnet/", currentUrl, "После клика на Docker открывает не ту страницу");
+        Assertions.assertEquals("https://www.jetbrains.com/guide/dotnet/tutorials/docker-dotnet/", currentUrl,
+                "После клика на Docker открывает не ту страницу");
     }
 
     @Test
@@ -44,6 +46,7 @@ public class RiderPageTest extends BaseTest {
     public void pricingButtonIsClickable() {
         rp.pricingButtonClick();
         String currentUrl = getDriver().getCurrentUrl();
-        Assertions.assertEquals("https://www.jetbrains.com/rider/buy/?section=personal&billing=yearly", currentUrl, "После клика на Pricing открывает не ту страницу");
+        Assertions.assertEquals("https://www.jetbrains.com/rider/buy/?section=personal&billing=yearly", currentUrl,
+                "После клика на Pricing открывает не ту страницу");
     }
 }
