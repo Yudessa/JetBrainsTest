@@ -3,6 +3,7 @@ package com.example.jetbrainstest.tests;
 import com.example.jetbrainstest.pages.RiderPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class RiderPageTest extends BaseTest {
@@ -17,11 +18,13 @@ public class RiderPageTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Проверка кликабельности кнопки перехода на главную страницу")
     public void mainPageButtonIsClickable() {
         Assertions.assertTrue(rp.checkIfMainPageButtonIsClickable(), "Кнопка перехода на главную страницу не активна");
     }
 
     @Test
+    @DisplayName("Проверка нажатия на кнопку Download")
     public void secondDownloadButtonIsClickable() {
         rp.downloadSecondButtonClick();
         String currentUrl = getDriver().getCurrentUrl();
@@ -29,6 +32,7 @@ public class RiderPageTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Проверка нажатия на кнопку Docker")
     public void dockerButtonIsClickable() {
         rp.dockerButtonClick();
         String currentUrl = getDriver().getCurrentUrl();
@@ -36,6 +40,7 @@ public class RiderPageTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Проверка нажатия на кнопку Pricing")
     public void pricingButtonIsClickable() {
         rp.pricingButtonClick();
         String currentUrl = getDriver().getCurrentUrl();
