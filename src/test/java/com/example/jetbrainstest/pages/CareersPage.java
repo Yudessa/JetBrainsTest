@@ -7,10 +7,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 
 public class CareersPage {
+    private final Logger LOG = LoggerFactory.getLogger(CareersPage.class);
     WebDriver driver;
     private final WebDriverWait wait;
 
@@ -31,7 +34,7 @@ public class CareersPage {
     public void clickInternshipButton(String expectedUrl) {
         internshipButton.click();
         String actualUrl = driver.getCurrentUrl();
-        System.out.println("Открыта страница: " + actualUrl);
+        LOG.info("Открылась страница " + actualUrl);
         Assertions.assertEquals(actualUrl, expectedUrl, "Страницы не существует");
     }
 
