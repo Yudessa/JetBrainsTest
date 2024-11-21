@@ -23,7 +23,7 @@ public class CareersPage {
     @FindBy(css = "a[data-test='button']._main_18aw4si_56")
     private WebElement internshipButton;
 
-    public boolean isButtonClickable() {
+    public boolean checkIfButtonIsClickable() {
         wait.until(ExpectedConditions.elementToBeClickable(internshipButton));
         return true;
     }

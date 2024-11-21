@@ -3,7 +3,10 @@ package com.example.jetbrainstest.tests;
 import com.example.jetbrainstest.pages.CareersPage;
 import org.junit.jupiter.api.*;
 
+
 public class CareersTest extends BaseTest {
+
+
     private CareersPage careersPage;
 
     @BeforeEach
@@ -17,7 +20,7 @@ public class CareersTest extends BaseTest {
     @Test
     @DisplayName("Проверка что кнопка кликабельна")
     public void buttonClickableCheck() {
-        Assertions.assertTrue(careersPage.isButtonClickable(), "Кнопка не кликабельна");
+        Assertions.assertTrue(careersPage.checkIfButtonIsClickable(), "Кнопка не кликабельна");
     }
 
     @RepeatedTest(5)
@@ -33,5 +36,6 @@ public class CareersTest extends BaseTest {
         careersPage.switchToRussianLanguage();
         String russianHeader = careersPage.getHeaderText();
         Assertions.assertNotEquals(initialHeader, russianHeader, "Язык заголовка не сменился");
+
     }
 }
