@@ -23,7 +23,7 @@ public class JuniePage {
         junieDownloadButton.click();
     }
 
-    public void installJunieButton(){
+    public void installJunieButton() {
         LOG.info("Проверка кликабельности кнопки Install to IDE");
         installJunieButton.click();
     }
