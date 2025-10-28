@@ -47,5 +47,3 @@ public class JuniePageTest extends BaseTest {
                 "переключение на junie-github не произошло");
     }
 }
-
-

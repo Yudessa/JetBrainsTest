@@ -71,4 +71,3 @@ public class JuniePage {
         return signUp.isDisplayed();
     }
 }
-
