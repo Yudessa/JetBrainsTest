@@ -25,12 +25,10 @@ public class JuniePageTest extends BaseTest {
     @DisplayName("Нажатие кнопки Download и переход на страницу скачивания")
     public void junieDownloadButton() {
         juniePage.junieDownloadButton();
-        ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
-        getDriver().switchTo().window(tabs.get(1));
-
+        juniePage.newTab();
         juniePage.acceptCookiesOnNewPage();
 
-        assertTrue(getDriver().getCurrentUrl().contains("26104-junie-the-ai-coding-agent-by-jetbrains"),
+        assertTrue(getDriver().getCurrentUrl().contains("junie-the-ai-coding-agent-by-jetbrains"),
                 "Ссылка не содержит ожидаемую часть");
 
         juniePage.getJunieButton();

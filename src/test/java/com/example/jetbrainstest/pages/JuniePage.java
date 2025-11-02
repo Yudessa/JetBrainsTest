@@ -11,12 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
+import java.util.ArrayList;
+
+import static com.example.jetbrainstest.tests.BaseTest.getDriver;
 
 public class JuniePage {
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(JuniePage.class));
     WebDriver driver;
 
-    @FindBy(xpath = "//a[contains(@href, '26104-jetbrains-junie-eap')]")
+    @FindBy(xpath = "//a[contains(@href, 'jetbrains-junie-eap')]")
     public WebElement junieDownloadButton;
 
     @FindBy(xpath = "//button[contains(@class, 'test_download_plugin_button')]")
@@ -69,5 +72,11 @@ public class JuniePage {
     public boolean signUp() {
         LOG.info("Проверка переключения на GitHub");
         return signUp.isDisplayed();
+    }
+
+    public void newTab() {
+        LOG.info("Открытие следующей вкладки");
+        ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(tabs.get(1));
     }
 }
