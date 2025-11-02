@@ -2,6 +2,7 @@ package com.example.jetbrainstest.pages;
 //URL https://www.jetbrains.com/junie/#
 
 import com.example.jetbrainstest.AllureLogger;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,11 +38,13 @@ public class JuniePage {
     @FindBy(xpath = "//a[contains(@href, 'join-waitlist')]")
     private WebElement signUp;
 
+    @Step("Нажатие кнопки Download")
     public void junieDownloadButton() {
         LOG.info("Нажатие кнопки Download");
         junieDownloadButton.click();
     }
 
+    @Step("Нажатие кнопки GET")
     public void getJunieButton() {
         LOG.info("Нажатие кнопки GET");
         getJunieButton.click();
