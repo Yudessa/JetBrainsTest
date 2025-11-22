@@ -17,20 +17,19 @@ import static com.example.jetbrainstest.tests.BaseTest.getDriver;
 
 public class JuniePage {
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(JuniePage.class));
-    //private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(JuniePage.class));
     WebDriver driver;
 
-    @FindBy(xpath = "//a[contains(@href, 'jetbrains-junie-eap')]")
-    public WebElement junieDownloadButton;
+    @FindBy(xpath = "//a[contains(@href, '/idea/download/')]")
+    public WebElement clickDownloadButton;
 
-    @FindBy(xpath = "//button[contains(@class, 'test_download_plugin_button')]")
-    public WebElement getJunieButton;
+    @FindBy(xpath = "//div[@id='download-block']//button[@data-test='dropdown-trigger']")
+    public WebElement clickGetJunieButton;
 
     @FindBy(xpath = "//button[contains(text(), 'Accept') or contains(text(), 'Принять')]")
     private WebElement acceptCookiesButton;
 
-    @FindBy(xpath = "//h2[text()='Plugin Versions']")
-    private WebElement pluginVersionsTable;
+    @FindBy(xpath = "//ul[@data-test='dropdown-menu']")
+    private WebElement downloadDropdownList;
 
     @FindBy(xpath = "//a[contains(@href, 'junie-github')]")
     private WebElement junieGit;
@@ -38,14 +37,14 @@ public class JuniePage {
     @FindBy(xpath = "//a[contains(@href, 'join-waitlist')]")
     private WebElement signUp;
 
-    public void junieDownloadButton() {
-        LOG.info("Нажатие кнопки Download");
-        junieDownloadButton.click();
+    public void clickDownloadButton() {
+        LOG.infoWithScreenshot("Нажатие кнопки Download");
+        clickDownloadButton.click();
     }
 
-    public void getJunieButton() {
+    public void clickGetJunieButton() {
         LOG.info("Нажатие кнопки GET");
-        getJunieButton.click();
+        clickGetJunieButton.click();
     }
 
     public JuniePage(WebDriver driver) {
@@ -60,13 +59,13 @@ public class JuniePage {
         acceptCookiesButton.click();
     }
 
-    public boolean isPluginVersionsTableDisplayed() {
-        LOG.info("Проверка отображения таблицы версий плагина");
-        return pluginVersionsTable.isDisplayed();
+    public boolean isDownloadDropdownListDisplayed() {
+        LOG.infoWithScreenshot("Проверка отображения выпадающего списка загрузки");
+        return downloadDropdownList.isDisplayed();
     }
 
     public void junieGit() {
-        LOG.info("Нажатие кнопки Junie in GitHub");
+        LOG.infoWithScreenshot("Нажатие кнопки Junie in GitHub");
         junieGit.click();
     }
 

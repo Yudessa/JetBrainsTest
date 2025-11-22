@@ -20,18 +20,15 @@ public class JuniePageTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Нажатие кнопки Download и переход на страницу скачивания")
-    public void junieDownloadButton() {
-        juniePage.junieDownloadButton();
-        juniePage.newTab();
-        juniePage.acceptCookiesOnNewPage();
-
-        assertTrue(getDriver().getCurrentUrl().contains("junie-the-ai-coding-agent-by-jetbrains"),
+    @DisplayName("Нажатие кнопки Download и переход на страницу скачивания, проверка выпадающего списка загрузки")
+    public void clickDownloadButton() {
+        juniePage.clickDownloadButton();
+        assertTrue(getDriver().getCurrentUrl().contains("/idea/download/"),
                 "Ссылка не содержит ожидаемую часть");
-
-        juniePage.getJunieButton();
-        assertTrue(juniePage.isPluginVersionsTableDisplayed(),
-                "Таблица с версиями плагина не отобразилась после нажатия кнопки GET");
+        juniePage.acceptCookiesOnNewPage();
+        juniePage.clickGetJunieButton();
+        assertTrue(juniePage.isDownloadDropdownListDisplayed(),
+                "Выпадающий список с вариантами загрузки не отобразился после нажатия кнопки");
     }
 
     @Test
