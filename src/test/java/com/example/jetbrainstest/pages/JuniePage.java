@@ -74,7 +74,7 @@ public class JuniePage {
         return signUp.isDisplayed();
     }
 
-    public void newTab() {
+    public void goNewTab() {
         LOG.info("Открытие следующей вкладки");
         ArrayList<String> tabs = new ArrayList<>(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(1));
